@@ -1,6 +1,6 @@
 class ListThing:
 
-    def __init__(self, the_list, the_sum=None, min_max=(None,None),
+    def __init__(self, the_list, the_sum=None, min_max=(None, None),
                  max_diff=None):
         """
         Initializes instance of class ListThing
@@ -9,7 +9,7 @@ class ListThing:
         :type the_list: list
         :param the_sum: sum of the_list
         :type the_sum: float
-        :param min_max: min and max of the_list 
+        :param min_max: min and max of the_list
         :type min_max: (Float, Float)
         :param max_diff: max difference between 2 adjacent elements in the_list
         :type max_diff: float
@@ -20,6 +20,15 @@ class ListThing:
         self.the_sum = the_sum
         self.min_max = min_max
         self.max_diff = max_diff
+
+    @property
+    def the_list(self):
+        return self._the_list
+
+    @the_list.setter
+    def the_list(self, value):
+        self._the_list = value
+        self.check_list()
 
     def check_list(self):
         """
@@ -36,15 +45,6 @@ class ListThing:
             self.max_diff = None
             raise TypeError("Given value is not type list and "
                             "is {}".format(type(self.the_list)))
-   
-    @property 
-    def the_list(self):
-        return self._the_list
-
-    @the_list.setter
-    def the_list(self, value):
-        self._the_list = value
-        self.check_list()
 
     def sum_list(self):
         """
@@ -77,10 +77,9 @@ class ListThing:
             raise InfinityError()
         self.the_sum = float(the_sum)
 
-
     def max_difference(self):
         """
-        Sets self.max_difference to the max difference between 
+        Sets self.max_difference to the max difference between
         adjacent values of self.the_list. Returns 0.0 if list
         only contains one value
 
@@ -105,7 +104,8 @@ class ListThing:
             try:
                 num = float(entry)
             except (ValueError, TypeError):
-                print("Value in list cannot be cast as float: {}".format(entry))
+                print("Value in list cannot be cast as "
+                      "float: {}".format(entry))
                 return None
             if num == float('inf') or num == float('-inf'):
                 logging.warning("List contains an infinite value")
@@ -116,10 +116,9 @@ class ListThing:
         logging.info("Setting self.max_diff")
         self.max_diff = curr_max
 
-
     def min_max_list(self):
         """
-        Sets self.min_max to a tuple containing the min and max 
+        Sets self.min_max to a tuple containing the min and max
         values of self.the_list
 
         :raises EmptyListError: if empty list is passed in
@@ -141,7 +140,8 @@ class ListThing:
             try:
                 num = float(val)
             except (ValueError, TypeError):
-                print("Value in list cannot be cast as float: {}".format(entry))
+                print("Value in list cannot be cast as float:"
+                      " {}".format(entry))
                 logging.debug("Erroneous type encountered: "
                               "{}".format(type(err)))
                 return (None, None)

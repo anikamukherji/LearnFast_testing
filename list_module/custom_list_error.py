@@ -18,6 +18,7 @@ class EmptyError(CustomListError):
     """
     pass
 
+
 class InfinityError(CustomListError):
     """
     Exception to be thrown if given list contains +/- infinity

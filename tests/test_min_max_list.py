@@ -20,7 +20,8 @@ def test_min_max_list():
     for type_fail in test_type_fails:
         with pytest.raises(TypeError):
             test_object.the_list = type_fail
-    infinity_fails = (['-inf', 5], ['-inf', 5], [float('-inf'), 5], [float('-inf'), 5])
+    infinity_fails = (['-inf', 5], ['-inf', 5], [float('-inf'), 5],
+                      [float('-inf'), 5])
     for test in infinity_fails:
         with pytest.raises(InfinityError):
             test_object.the_list = infinity_fail
