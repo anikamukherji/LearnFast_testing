@@ -4,35 +4,30 @@ def test_max_difference():
     """
     try:
         import pytest
-        from list_module.max_difference import max_difference
-    except ImportError:
-        print("The necessary module for this test failed to import")
+        from list_module.list_thing import ListThing
+        from custom_list_error import EmptyError, InfinityError
+    except ImportError as e:
+        print("Necessary imports failed: {}".format(e))
         return
-    test_data1 = [1, 5, 6, 7, 12]
-    test_data2 = [3, 4, 5, 56, 45]
-    test_data3 = [6, 34, 23, 45, 57]
-    test_data4 = []
-    test_data5 = [1, 'b', 7]
-    test_data6 = [-1, -7, -9]
-    output1 = max_difference(test_data1)
-    output2 = max_difference(test_data2)
-    output3 = max_difference(test_data3)
-    output4 = max_difference(test_data4)
-    output5 = max_difference(test_data5)
-    output6 = max_difference(test_data6)
-    assert output1 == 5
-    assert output2 == 51
-    assert output3 == 28
-    assert output4 == 0
-    assert output5 is None
-    assert output6 == 6
-    with pytest.raises(TypeError):
-        max_difference(2)
-    with pytest.raises(ValueError):
-        max_difference(['inf', 3, 4.0])
-    with pytest.raises(ValueError):
-        max_difference(['-inf', 3, 4.0])
-    with pytest.raises(ValueError):
-        max_difference([float('-inf'), 3, 4.0])
-    with pytest.raises(ValueError):
-        max_difference([float('inf'), 3, 4.0])
+    test_object = ListThing([])
+    test_data = ([0, -3, -1, 10], [1, 3, 2, 5], [-1.5, -9, -3, -7, -1])
+    test_answers = (11, 3, 7.5)
+    for test, ans in zip(test_data, test_answers):
+        test_object.the_list = test
+        test_object.max_difference()
+        assert test_object.max_diff == ans
+    test_type_fails = [5, 'abc', {1: 4}]
+    for type_fail in test_type_fails:
+        with pytest.raises(TypeError):
+            test_object.the_list = type_fail
+    infinity_fails = (['-inf', 5], ['-inf', 5], [float('-inf'), 5],
+                      [float('-inf'), 5])
+    for test in infinity_fails:
+        with pytest.raises(InfinityError):
+            test_object.the_list = infinity_fail
+            test_object.max_difference()
+    test_value_fails = (['s', 8], [1.0, {6: 'a'}], [8, None])
+    for test in test_value_fails:
+        test_object.the_list = test
+        test_object.max_difference()
+        assert test_object.max_difference is None
