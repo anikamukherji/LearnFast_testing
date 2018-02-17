@@ -15,7 +15,7 @@ class ListThing:
         :type max_diff: float
         :raises TypeError: if value given for the_list is not type list
         """
-        self.the_list = the_list
+        self._the_list = the_list
         self.check_list()
         self.the_sum = the_sum
         self.min_max = min_max
@@ -31,13 +31,20 @@ class ListThing:
         if type(self.the_list) is not list:
             print("Given value is not type list and "
                   "is {}".format(type(self.the_list)))
-            self.the_list = []
             self.the_sum = None
             self.min_max = (None, None)
             self.max_diff = None
             raise TypeError("Given value is not type list and "
                             "is {}".format(type(self.the_list)))
-    
+   
+    @property 
+    def the_list(self):
+        return self._the_list
+
+    @the_list.setter
+    def the_list(self, value):
+        self._the_list = value
+        self.check_list()
 
     def sum_list(self):
         """
@@ -137,7 +144,7 @@ class ListThing:
                 print("Value in list cannot be cast as float: {}".format(entry))
                 logging.debug("Erroneous type encountered: "
                               "{}".format(type(err)))
-                return None
+                return (None, None)
             if num == float('inf') or num == float('-inf'):
                 raise InfinityError()
         my_min = min(self.the_list)
