@@ -1,4 +1,15 @@
 class ListThing:
+    """
+    Class for an object whose identity is determined by a list that provides
+    methods that act on the list
+
+    Attributes:
+        the_list (list): defining list of the object
+        the_sum (float): sum of the_list
+        min_max (tuple): tuple of floats, (min, max) of the_list
+        max_diff (float): max difference between two adjacent elements
+                          in the_list
+    """
 
     def __init__(self, the_list, the_sum=None, min_max=(None, None),
                  max_diff=None):
@@ -50,7 +61,7 @@ class ListThing:
         """
         Sets self.the_sum to the sum of self.the_list
 
-        :raises EmptyListError: if empty list is passed in
+        :raises EmptyError: if empty list is passed in
         :raises InfinityError: if list contains +/-infinity
 
         :return: void
@@ -83,7 +94,7 @@ class ListThing:
         adjacent values of self.the_list. Returns 0.0 if list
         only contains one value
 
-        :raises EmptyListError: if empty list is passed in
+        :raises EmptyError: if empty list is passed in
         :raises InfinityError: if list contains +/-infinity
 
         :return: void
@@ -121,7 +132,7 @@ class ListThing:
         Sets self.min_max to a tuple containing the min and max
         values of self.the_list
 
-        :raises EmptyListError: if empty list is passed in
+        :raises EmptyError: if empty list is passed in
         :raises InfinityError: if list contains +/-infinity
 
         :return: void
