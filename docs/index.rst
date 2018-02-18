@@ -11,10 +11,8 @@ Welcome to LearnFast_testing's documentation!
    :caption: Contents:
    :glob:
 
-   list_module/list_thing.py
-   tests/test_sum_list.py
-   tests/test_min_max_list.py
-   tests/test_max_difference.py
+   list_module
+   tests
 
 
 Indices and tables
