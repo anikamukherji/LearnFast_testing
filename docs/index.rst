@@ -1,5 +1,5 @@
 .. LearnFast_testing documentation master file, created by
-   sphinx-quickstart on Tue Feb 13 14:29:19 2018.
+   sphinx-quickstart on Sat Feb 17 19:56:27 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -9,12 +9,12 @@ Welcome to LearnFast_testing's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :glob:
 
-   list_module
-   test_sum_list
-   test_max_difference
-   test_min_max_list
-
+   list_module/list_thing.py
+   tests/test_sum_list.py
+   tests/test_min_max_list.py
+   tests/test_max_difference.py
 
 
 Indices and tables

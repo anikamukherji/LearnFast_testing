@@ -20,8 +20,8 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'LearnFast_testing'
-copyright = '2018, Anika Mukherji, Zhiwei Kang, Yi Zhao'
-author = 'Anika Mukherji, Zhiwei Kang, Yi Zhao'
+copyright = '2018, Anika Mukherji'
+author = 'Anika Mukherji'
 
 # The short X.Y version
 version = ''
@@ -59,7 +59,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'python'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -75,7 +75,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -130,7 +130,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'LearnFast_testing.tex', 'LearnFast\\_testing Documentation',
-     'Anika Mukherji, Zhiwei Kang, Zi Zhao', 'manual'),
+     'Anika Mukherji', 'manual'),
 ]
 
 

@@ -4,26 +4,18 @@ list\_module package
 Submodules
 ----------
 
-list\_module.max\_difference module
------------------------------------
+list\_module.custom\_list\_error module
+---------------------------------------
 
-.. automodule:: list_module.max_difference
+.. automodule:: list_module.custom_list_error
     :members:
     :undoc-members:
     :show-inheritance:
 
-list\_module.min\_max\_list module
-----------------------------------
+list\_module.list\_thing module
+-------------------------------
 
-.. automodule:: list_module.min_max_list
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-list\_module.sum\_list module
------------------------------
-
-.. automodule:: list_module.sum_list
+.. automodule:: list_module.list_thing
     :members:
     :undoc-members:
     :show-inheritance:
